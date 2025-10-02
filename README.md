@@ -1,212 +1,168 @@
-# 🚀 Ashwith Anand Poojary - Interactive Portfolio
+# 📊 Ashwith Anand Poojary - Interactive Portfolio
 
-[![Portfolio Status](https://img.shields.io/badge/Status-Live-brightgreen)](https://ashwith1.github.io/AshResume.github.io/)
-[![GitHub Pages](https://img.shields.io/badge/Deployed%20on-GitHub%20Pages-blue)](https://pages.github.com/)
-[![Responsive](https://img.shields.io/badge/Responsive-Yes-success)](#)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](#)
+**Data Scientist & AI Researcher Portfolio**
 
-Modern, interactive portfolio website showcasing expertise in **Data Science & AI Research** with stunning visual effects and seamless user experience.
+A modern, interactive portfolio website showcasing expertise in data science, machine learning, and AI development.
 
-## 🌟 Live Portfolio
+## 🌐 Live Demo
 
-**🔗 [View Live Portfolio](https://ashwith1.github.io/AshResume.github.io/)**
+**Portfolio Website**: [https://ashresume.github.io](https://ashresume.github.io)  
+**Vercel Deployment**: [https://ash-resume-ce8qicjbj-ashwith1s-projects.vercel.app](https://ash-resume-ce8qicjbj-ashwith1s-projects.vercel.app)
 
-## ✨ Features
+## 🎆 Features
 
-### 🎨 **Visual & Interactive**
-- ✅ **Interactive Particle Animation** - Dynamic background effects
-- ✅ **Smooth Scrolling Navigation** - Seamless section transitions  
-- ✅ **Mobile-Responsive Design** - Perfect on all devices
-- ✅ **Dark Theme** - Modern gradient accents (Blue/Purple)
-- ✅ **Typing Animation Effects** - Dynamic text animations
-- ✅ **Hover Interactions** - Engaging micro-animations
+### **Design & User Experience**
+- 🌌 **Dark Theme**: Professional dark design with teal/cyan accents
+- ✨ **Particle Animation**: Interactive floating particles in hero section
+- 📝 **Typing Animation**: Dynamic text cycling through professional roles
+- 📱 **Fully Responsive**: Mobile-first design with touch-friendly navigation
+- 🎨 **Smooth Animations**: Hover effects, scroll animations, and transitions
 
-### 🛠️ **Technical Excellence**
-- ✅ **SEO Optimized** - Meta tags, structured data
-- ✅ **Performance Optimized** - Fast loading, efficient animations
-- ✅ **Cross-Browser Compatible** - Works on all modern browsers
-- ✅ **Accessibility Features** - Screen reader friendly
-- ✅ **Progressive Enhancement** - Works without JavaScript
+### **Interactive Elements**
+- 🧭 **Smooth Navigation**: Auto-highlighting active sections with smooth scrolling
+- 📎 **Fixed Navbar**: Backdrop blur effect with scroll detection
+- 🌔 **Mobile Menu**: Hamburger menu with slide animations
+- 📲 **Contact Form**: Working form with email client integration
+- 📄 **Resume Download**: Generates comprehensive PDF-ready resume
 
-### 📱 **User Experience**
-- ✅ **Intuitive Navigation** - Easy-to-use interface
-- ✅ **Contact Form** - Working form with validation
-- ✅ **Social Media Integration** - Direct links to profiles
-- ✅ **Download Resume** - Quick CV download option
+### **Content Sections**
+1. **Hero Section**: Introduction with animated typing and social links
+2. **About**: Professional summary with animated statistics
+3. **Skills**: Two-tier categorization (Advanced/Proficient) with icons
+4. **Projects**: Featured projects with live demos and GitHub links
+5. **Experience**: Professional timeline with detailed achievements
+6. **Contact**: Contact form and professional details
 
-## 🎯 Website Sections
+## 🛠️ Tech Stack
 
-### 1. **Hero Section** 🎭
-- Interactive particle background animation
-- Professional profile image with floating effects
-- Typing animation for dynamic introduction
-- Call-to-action buttons and social media links
+### **Frontend**
+- **HTML5**: Semantic structure with proper accessibility
+- **CSS3**: Modern features including CSS Grid, Flexbox, Custom Properties
+- **Vanilla JavaScript**: No frameworks, optimized performance
+- **Font Awesome**: Professional icon library
+- **Google Fonts**: Poppins typography
 
-### 2. **About Section** 👨‍💻
-- Professional summary and current focus
-- Key achievement statistics:
-  - 13+ GitHub Projects
-  - 40% Query Efficiency Improvement
-  - 30% Data Retrieval Speed Increase
+### **Design System**
+- **CSS Custom Properties**: Centralized design tokens
+- **Responsive Design**: Mobile-first approach
+- **Modern CSS**: Grid layouts, backdrop filters, CSS animations
+- **Performance Optimized**: Debounced scroll events, intersection observers
 
-### 3. **Skills Section** 🛠️
-**Advanced Skills:**
-- Python, Machine Learning, NLP
-- Power BI, Tableau, FastAPI
-- LLM Integration
+### **Deployment**
+- **GitHub Pages**: Primary hosting
+- **Vercel**: Secondary deployment with automatic updates
+- **Custom Domain Ready**: Configured for custom domain setup
 
-**Proficient Skills:**
-- Azure, GCP, Kafka
-- Qdrant, SAS, Palantir Foundry
-- Agile Methodologies
+## 📊 Key Achievements Showcased
 
-### 4. **Projects Section** 🚀
-Featured projects with live links:
-- **Master Thesis**: AI-Vector Database Integration
-- **German Biography Generator**: NLP & AI-driven text processing
-- **2024 US Presidential Election Dashboard**: Data visualization
-- **TTS Generation with Emotion**: Deep learning audio synthesis
+### **Professional Experience**
+- **Merck KGaA Internship**: Data Science & AI role (April 2025 - August 2025)
+  - 40% improvement in query efficiency
+  - 30% increase in data retrieval speed
+  - FastAPI + LLM + Qdrant integration
+  - Palantir AIP multi-agent chatbot development
 
-### 5. **Experience Section** 💼
-Professional timeline:
-- **Merck KGaA** - Data Science & AI Intern (2025)
-- **McAfee Software** - Major Incident Manager (2022-2023)
+### **Featured Projects**
+1. **Master Thesis Dashboard**: [Live Demo](https://masterthesisdashboard.vercel.app)
+2. **German Biography Generator**: [GitHub](https://github.com/ashwith1/German_Biography_Generator)
+3. **2024 US Election Dashboard**: [GitHub](https://github.com/ashwith1/The-2024-US-Presidential-Election-Dashboard)
+4. **EU Energy Consumption Analysis**: [GitHub](https://github.com/ashwith1/Team_DataDoofs_Energy-Consumption-Dashboard)
 
-### 6. **Contact Section** 📬
-- Interactive contact form with validation
-- Professional contact information
-- Location: Heidelberg, Germany
+### **Technical Skills**
+**Advanced**: Python, Machine Learning, NLP, Power BI, Tableau, FastAPI, LLM Integration  
+**Proficient**: Azure, GCP, Kafka, Qdrant, SAS, Palantir Foundry, Agile
 
-## 🛠️ Technologies Used
-
-### **Frontend Stack**
-- **HTML5** - Semantic markup and structure
-- **CSS3** - Advanced styling with Grid, Flexbox, Animations
-- **JavaScript (ES6+)** - Modern interactive functionality
-
-### **Key APIs & Features**
-- **Intersection Observer API** - Scroll-triggered animations
-- **Canvas API** - Particle effect system
-- **CSS Custom Properties** - Dynamic theming
-- **Web APIs** - Modern browser features
-
-### **Development Tools**
-- **Git** - Version control
-- **GitHub Pages** - Free hosting
-- **Vercel** - Alternative deployment platform
-- **Responsive Design** - Mobile-first approach
-
-## 📊 Performance Metrics
-
-- ⚡ **Load Time**: < 2 seconds
-- 📱 **Mobile Score**: 95/100
-- 🚀 **Performance Score**: 90+/100
-- ♿ **Accessibility Score**: 95/100
-- 🔍 **SEO Score**: 100/100
-
-## 🚀 Deployment
-
-### **GitHub Pages (Primary)**
-```bash
-# Automatic deployment on every push to main branch
-URL: https://ashwith1.github.io/AshResume.github.io/
-```
-
-### **Vercel (Alternative)**
-```bash
-# Connect repository to Vercel for additional deployment
-# Custom domain available with Vercel Pro
-```
-
-## 📁 Project Structure
+## 📝 File Structure
 
 ```
 AshResume.github.io/
 ├── index.html          # Main HTML structure
-├── style.css           # Complete CSS styling & animations
-├── script.js           # JavaScript functionality & interactions
+├── style.css           # Complete CSS design system
+├── app.js              # Interactive JavaScript functionality
+├── script.js           # Legacy script (replaced by app.js)
 ├── vercel.json         # Vercel deployment configuration
-├── README.md           # Project documentation
-├── card_script.py      # Legacy Python script (to be removed)
-└── script.py           # Legacy Python script (to be removed)
+└── README.md           # This documentation
 ```
 
-## 🎨 Design Philosophy
+## 🚀 Performance Features
 
-### **Color Scheme**
-- **Primary**: `#00d4ff` (Cyan Blue)
-- **Secondary**: `#ff006e` (Magenta)
-- **Accent**: `#8338ec` (Purple)
-- **Background**: `#0a0a0a` (Deep Black)
-- **Text**: `#ffffff` (White) / `#cccccc` (Light Gray)
+### **Optimizations**
+- **Lazy Loading**: Intersection Observer for scroll animations
+- **Debounced Events**: Optimized scroll and resize handlers
+- **Request Animation Frame**: Smooth particle animations
+- **CSS Transforms**: Hardware-accelerated animations
+- **Minimal Dependencies**: Vanilla JavaScript for fast loading
 
-### **Typography**
-- **Font Family**: Poppins (Google Fonts)
-- **Hierarchy**: Clear heading structure (H1-H6)
-- **Readability**: Optimized line spacing and contrast
+### **Accessibility**
+- **Semantic HTML**: Proper heading hierarchy and landmarks
+- **Keyboard Navigation**: Tab navigation and ESC key handling
+- **Focus Management**: Visible focus indicators
+- **Screen Reader Support**: Proper ARIA labels and alt text
+- **Color Contrast**: WCAG AA compliant color scheme
 
-### **Layout**
-- **Grid System**: CSS Grid for complex layouts
-- **Flexbox**: Component-level alignment
-- **Responsive Breakpoints**: Mobile-first design
+## 📋 Resume Download Feature
 
-## 👨‍💻 About Ashwith Anand Poojary
+The portfolio includes a comprehensive resume download functionality:
+
+### **Generated Content**
+- Complete contact information
+- Professional summary and experience
+- Detailed project descriptions with links
+- Technical skills categorization
+- Education and certifications
+- Key achievements and metrics
+- Generated timestamp
+
+### **Format**
+- **Download**: Plain text (.txt) format
+- **PDF Ready**: Properly formatted for PDF conversion
+- **Comprehensive**: 50+ lines of detailed professional information
+- **Auto-Generated**: Updates with current date
+
+## 🔗 Social & Professional Links
+
+- **Email**: [asha491322@gmail.com](mailto:asha491322@gmail.com)
+- **Phone**: +49 15566158086
+- **LinkedIn**: [Ashwith Anand Poojary](http://www.linkedin.com/in/ashwith-anand-poojary-b02b85342/)
+- **GitHub**: [ashwith1](https://github.com/ashwith1)
+- **Location**: Heidelberg, Baden-Württemberg, Germany
+
+## 🎯 Professional Focus
 
 ### **Current Role**
-🎓 **Master's Student** - Applied Data Science & Analytics  
-📍 **Location** - SRH Hochschule Heidelberg, Germany  
-💼 **Intern** - Data Science & AI at Merck KGaA  
+Pursuing M.Sc. in Applied Data Science and Analytics at SRH Hochschule Heidelberg while gaining practical experience through internships at leading pharmaceutical companies.
 
-### **Expertise**
-- **Data Science & Analytics**: Advanced statistical modeling
-- **Machine Learning**: NLP, Deep Learning, AI model development
-- **Cloud Platforms**: Azure, GCP, enterprise-scale deployments
-- **Data Visualization**: Tableau, Power BI, interactive dashboards
-- **Backend Development**: Python, FastAPI, microservices architecture
+### **Expertise Areas**
+- **Data Science & Analytics**: Advanced statistical analysis and modeling
+- **Machine Learning**: Supervised and unsupervised learning algorithms
+- **Natural Language Processing**: Text processing and language models
+- **Business Intelligence**: Dashboard development and data visualization
+- **Cloud Computing**: Azure and GCP platform development
+- **AI Integration**: LLM integration and vector database systems
 
-### **Key Achievements**
-- 🏆 **2nd Place** - AI Agent for Omics and Foundation Models (BioMed X)
-- 📈 **40% Efficiency Improvement** - Automated SQL query optimization
-- 🚀 **30% Speed Increase** - Data retrieval performance enhancement
-- 📊 **13+ Open Source Projects** - Active GitHub contributor
+### **Industry Experience**
+- **Pharmaceutical**: Merck KGaA data science internship
+- **Cybersecurity**: McAfee incident management and IT support
+- **Academic Research**: Institut für Geschichte und Biographie collaboration
 
-## 📬 Contact Information
+## 🌐 Deployment Information
 
-- 📧 **Email**: [asha491322@gmail.com](mailto:asha491322@gmail.com)
-- 📱 **Phone**: +49 15566158086
-- 🌍 **Location**: Heidelberg, Baden-Württemberg, Germany
-- 💼 **LinkedIn**: [Professional Profile](http://www.linkedin.com/in/ashwith-anand-poojary-b02b85342/)
-- 🧑‍💻 **GitHub**: [Code Portfolio](https://github.com/ashwith1)
+### **Automatic Deployment**
+The portfolio is configured for automatic deployment on both GitHub Pages and Vercel:
 
-## 🤝 Contributing
+- **GitHub Pages**: Updates automatically on push to main branch
+- **Vercel**: Continuous deployment with build optimization
+- **Custom Domain Ready**: DNS configuration prepared for custom domain
 
-This portfolio is open to suggestions and improvements!
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- **Google Fonts** - Poppins typography
-- **Font Awesome** - Professional icons
-- **GitHub Pages** - Free hosting platform
-- **Vercel** - Alternative deployment option
-- **CSS Grid & Flexbox** - Modern layout techniques
+### **Build Process**
+- **No Build Step Required**: Pure HTML/CSS/JS
+- **Optimized Assets**: Compressed and minified resources
+- **Fast Loading**: Optimized for Core Web Vitals
 
 ---
 
-### 🌟 **Star this repository if you found it helpful!**
+**Last Updated**: October 2025  
+**Version**: 2.0 - Complete Redesign  
+**Status**: ✅ Live and Deployed
 
-**Built with ❤️ by [Ashwith Anand Poojary](https://github.com/ashwith1)**  
-*Data Scientist & AI Researcher*
-
----
-
-© 2025 Ashwith Anand Poojary. All rights reserved.
+*This portfolio demonstrates modern web development practices while showcasing expertise in data science and AI development.*
