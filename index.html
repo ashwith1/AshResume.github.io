@@ -3,154 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ashwith Anand Poojary - Data Scientist & AI Researcher</title>
-    <meta name="description" content="Data scientist and AI researcher with expertise in machine learning, NLP, and modern data visualization. Currently pursuing M.Sc. in Applied Data Science at SRH Heidelberg.">
+    <meta name="description" content="Ashwith Anand Poojary - Data Scientist & AI Researcher portfolio. Innovative data analyst with expertise in Machine Learning, NLP, and AI solutions.">
+    <meta name="keywords" content="Data Scientist, AI Researcher, Machine Learning, NLP, Python, Portfolio">
+    <meta name="author" content="Ashwith Anand Poojary">
     
-    <!-- Open Graph -->
+    <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Ashwith Anand Poojary - Data Scientist & AI Researcher">
-    <meta property="og:description" content="Innovative data analyst with expertise in AI, machine learning, and data visualization. Experienced with Palantir Foundry, LLMs, and FastAPI.">
+    <meta property="og:description" content="Innovative data analyst with expertise in Machine Learning, NLP, and AI solutions.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ashresume.github.io">
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/151952490?v=4">
     
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Ashwith Anand Poojary - Data Scientist & AI Researcher">
-    <meta name="twitter:description" content="Innovative data analyst with expertise in AI, machine learning, and data visualization.">
+    <title>Ashwith Anand Poojary - Data Scientist & AI Researcher</title>
     
-    <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📊%3C/text%3E%3C/svg%3E">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer">
-    
-    <!-- Styles -->
     <link rel="stylesheet" href="style.css">
-    
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Ashwith Anand Poojary",
-        "jobTitle": "Data Scientist & AI Researcher",
-        "description": "Innovative data analyst with expertise in AI, machine learning, and data visualization",
-        "url": "https://ashresume.github.io",
-        "email": "asha491322@gmail.com",
-        "telephone": "+49 15566158086",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Heidelberg",
-            "addressRegion": "Baden-Württemberg",
-            "addressCountry": "Germany"
-        },
-        "alumniOf": [
-            {
-                "@type": "EducationalOrganization",
-                "name": "SRH Hochschule Heidelberg"
-            },
-            {
-                "@type": "EducationalOrganization",
-                "name": "PES Institute of Technology"
-            }
-        ],
-        "worksFor": {
-            "@type": "Organization",
-            "name": "Merck KGaA",
-            "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Darmstadt",
-                "addressCountry": "Germany"
-            }
-        }
-    }
-    </script>
 </head>
 <body>
-    <!-- Background Particles -->
-    <div id="particles" class="particles-container"></div>
-    
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <div class="nav-brand">
-                <a href="#home">
-                    <span class="brand-icon">📊</span>
-                    Ashwith Anand
-                </a>
+            <div class="nav-logo">
+                <a href="#home">Ashwith</a>
             </div>
-            
-            <ul class="nav-menu" id="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#experience" class="nav-link">Experience</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-                <li><button onclick="downloadResume()" class="btn-resume">Resume</button></li>
-            </ul>
-            
-            <button class="nav-toggle" id="nav-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </div>
     </nav>
-    
+
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1 class="hero-title">
-                        Hi, I'm <span class="gradient-text">Ashwith Anand</span>
-                    </h1>
-                    <p class="hero-subtitle">
-                        <span id="typing-text">Data Scientist & AI Researcher</span>
-                        <span class="typing-cursor">|</span>
-                    </p>
-                    <p class="hero-description">
-                        Innovative data analyst with a strong foundation in applied data science and AI, demonstrated through impactful work at Merck KGaA, Darmstadt, Germany. Proficient in leveraging platforms like Palantir Foundry, LLMs and FastAPI to develop robust real-time solutions.
-                    </p>
-                    
-                    <div class="hero-buttons">
-                        <a href="#projects" class="btn-primary">View My Work</a>
-                        <a href="#contact" class="btn-secondary">
-                            <i class="fas fa-envelope"></i>
-                            Get In Touch
-                        </a>
-                    </div>
-                    
-                    <div class="hero-social">
-                        <a href="mailto:asha491322@gmail.com" title="Email" class="social-link">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                        <a href="https://github.com/ashwith1" target="_blank" title="GitHub" class="social-link">
+        <div class="particles" id="particles"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Hi, I'm <span class="highlight">Ashwith Anand Poojary</span></h1>
+                <div class="typing-container">
+                    <span class="typing-text" id="typing-text"></span>
+                    <span class="cursor">|</span>
+                </div>
+                <p class="hero-description">
+                    Innovative data analyst with a strong foundation in applied data science and AI, demonstrated through impactful work at Merck KGaA, Darmstadt, Germany. Proficient in leveraging platforms like Palantir Foundry, LLMs and FastAPI to develop robust real-time solutions.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn btn--primary" onclick="downloadResume()">
+                        <i class="fas fa-download"></i> Download CV
+                    </button>
+                    <div class="social-links">
+                        <a href="https://github.com/ashwith1" target="_blank" class="social-link">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="http://www.linkedin.com/in/ashwith-anand-poojary-b02b85342/" target="_blank" title="LinkedIn" class="social-link">
+                        <a href="http://www.linkedin.com/in/ashwith-anand-poojary-b02b85342/" target="_blank" class="social-link">
                             <i class="fab fa-linkedin"></i>
                         </a>
-                        <a href="tel:+4915566158086" title="Phone" class="social-link">
-                            <i class="fas fa-phone"></i>
+                        <a href="mailto:asha491322@gmail.com" class="social-link">
+                            <i class="fas fa-envelope"></i>
                         </a>
                     </div>
                 </div>
-                
-                <div class="hero-image">
-                    <div class="image-container">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" alt="Ashwith Anand Poojary" class="profile-image">
-                    </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-container">
+                    <img src="https://avatars.githubusercontent.com/u/151952490?v=4" alt="Ashwith Anand Poojary" class="profile-image">
                 </div>
             </div>
         </div>
     </section>
-    
+
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
@@ -158,16 +89,20 @@
             <div class="about-content">
                 <div class="about-text">
                     <p>
-                        I'm currently pursuing my M.Sc. in Applied Data Science and Analytics at SRH Hochschule Heidelberg, Germany. My journey in data science began with a Bachelor's in Information Science and Engineering from PES Institute of Technology, Bangalore.
+                        I'm currently pursuing my M.Sc. in Applied Data Science and Analytics at SRH Hochschule Heidelberg, Germany. 
+                        My journey in data science began with a Bachelor's in Information Science and Engineering from PES Institute of Technology, Bangalore.
                     </p>
                     <p>
-                        My passion lies in transforming complex data into actionable insights through innovative AI solutions. I've had the privilege of working as an intern at Merck KGaA, where I developed cutting-edge LLM integrations and streamlined data processing workflows. My expertise spans across machine learning, natural language processing, and modern data visualization platforms.
+                        My passion lies in transforming complex data into actionable insights through innovative AI solutions. 
+                        I've had the privilege of working as an intern at Merck KGaA, where I developed cutting-edge LLM integrations 
+                        and streamlined data processing workflows. My expertise spans across machine learning, natural language processing, 
+                        and modern data visualization platforms.
                     </p>
                     <p>
-                        When I'm not coding or analyzing data, I enjoy exploring the intersection of technology and human behavior, continuously learning new methodologies to solve real-world problems through data-driven approaches.
+                        When I'm not coding or analyzing data, I enjoy exploring the intersection of technology and human behavior, 
+                        continuously learning new methodologies to solve real-world problems through data-driven approaches.
                     </p>
                 </div>
-                
                 <div class="stats-grid">
                     <div class="stat-card">
                         <h3>13+</h3>
@@ -185,7 +120,7 @@
             </div>
         </div>
     </section>
-    
+
     <!-- Skills Section -->
     <section id="skills" class="skills">
         <div class="container">
@@ -207,11 +142,11 @@
                             <span>NLP</span>
                         </div>
                         <div class="skill-card advanced">
-                            <i class="fas fa-chart-line"></i>
+                            <i class="fas fa-chart-bar"></i>
                             <span>Power BI</span>
                         </div>
                         <div class="skill-card advanced">
-                            <i class="fas fa-chart-bar"></i>
+                            <i class="fas fa-chart-line"></i>
                             <span>Tableau</span>
                         </div>
                         <div class="skill-card advanced">
@@ -224,7 +159,6 @@
                         </div>
                     </div>
                 </div>
-                
                 <div class="skills-category">
                     <h3>Proficient</h3>
                     <div class="skills-grid">
@@ -249,7 +183,7 @@
                             <span>SAS</span>
                         </div>
                         <div class="skill-card proficient">
-                            <i class="fas fa-cogs"></i>
+                            <i class="fas fa-project-diagram"></i>
                             <span>Palantir Foundry</span>
                         </div>
                         <div class="skill-card proficient">
@@ -261,7 +195,7 @@
             </div>
         </div>
     </section>
-    
+
     <!-- Projects Section -->
     <section id="projects" class="projects">
         <div class="container">
@@ -271,39 +205,40 @@
                     <div class="project-header">
                         <h3>Master Thesis: AI-Vector Database Integration</h3>
                         <div class="project-links">
-                            <a href="https://masterthesisdashboard.vercel.app" target="_blank" class="project-link" title="Live Demo">
+                            <a href="https://masterthesisdashboard.vercel.app" target="_blank" class="project-link">
                                 <i class="fas fa-external-link-alt"></i>
                             </a>
                         </div>
                     </div>
                     <p class="project-description">
-                        Integrate MyGPT (LLM) with Qdrant and SQL via FastAPI to enable efficient semantic searches, real-time insights, and interactive data visualizations.
+                        Integrate MyGPT (LLM) with Qdrant and SQL via FastAPI to enable efficient semantic searches, 
+                        real-time insights, and interactive data visualizations.
                     </p>
                     <div class="project-tech">
                         <span class="tech-tag">Python</span>
-                        <span class="tech-tag">MyGPT (LLM)</span>
+                        <span class="tech-tag">MyGPT</span>
                         <span class="tech-tag">FastAPI</span>
                         <span class="tech-tag">Qdrant</span>
-                        <span class="tech-tag">Palantir Foundry</span>
                         <span class="tech-tag">Azure DevOps</span>
                     </div>
                     <div class="project-meta">
-                        <span>April 2025 – Present</span>
-                        <span>Darmstadt, Germany</span>
+                        <span class="project-location">Darmstadt, Germany</span>
+                        <span class="project-period">April 2025 – Present</span>
                     </div>
                 </div>
-                
+
                 <div class="project-card">
                     <div class="project-header">
                         <h3>German Biography Generator</h3>
                         <div class="project-links">
-                            <a href="https://github.com/ashwith1/German_Biography_Generator" target="_blank" class="project-link" title="GitHub">
+                            <a href="https://github.com/ashwith1/German_Biography_Generator" target="_blank" class="project-link">
                                 <i class="fab fa-github"></i>
                             </a>
                         </div>
                     </div>
                     <p class="project-description">
-                        Automated AI-driven biography generator from interviews at Institut für Geschichte und Biographie, GDPR-compliant large-scale text processing.
+                        Automated AI-driven biography generator from interviews at Institut für Geschichte und Biographie, 
+                        GDPR-compliant large-scale text processing.
                     </p>
                     <div class="project-tech">
                         <span class="tech-tag">Python</span>
@@ -312,22 +247,23 @@
                         <span class="tech-tag">Streamlit</span>
                     </div>
                     <div class="project-meta">
-                        <span>May 2024 - October 2024</span>
-                        <span>Heidelberg, Germany</span>
+                        <span class="project-location">Heidelberg, Germany</span>
+                        <span class="project-period">May 2024 - October 2024</span>
                     </div>
                 </div>
-                
+
                 <div class="project-card">
                     <div class="project-header">
                         <h3>2024 US Presidential Election Dashboard</h3>
                         <div class="project-links">
-                            <a href="https://github.com/ashwith1/The-2024-US-Presidential-Election-Dashboard" target="_blank" class="project-link" title="GitHub">
+                            <a href="https://github.com/ashwith1/The-2024-US-Presidential-Election-Dashboard" target="_blank" class="project-link">
                                 <i class="fab fa-github"></i>
                             </a>
                         </div>
                     </div>
                     <p class="project-description">
-                        Dynamic Tableau dashboard showcasing electoral themes, voter priorities, demographic insights, and results from 2024 US Presidential Election.
+                        Dynamic Tableau dashboard showcasing electoral themes, voter priorities, demographic insights, 
+                        and results from 2024 US Presidential Election.
                     </p>
                     <div class="project-tech">
                         <span class="tech-tag">Tableau</span>
@@ -336,36 +272,37 @@
                         <span class="tech-tag">TabPy</span>
                     </div>
                     <div class="project-meta">
-                        <span>October 2024 - November 2024</span>
-                        <span>Heidelberg, Germany</span>
+                        <span class="project-location">Heidelberg, Germany</span>
+                        <span class="project-period">October 2024 - November 2024</span>
                     </div>
                 </div>
-                
+
                 <div class="project-card">
                     <div class="project-header">
                         <h3>DataDoofs Energy Consumption Dashboard</h3>
                         <div class="project-links">
-                            <a href="https://github.com/ashwith1/Team_DataDoofs_Energy-Consumption-Dashboard" target="_blank" class="project-link" title="GitHub">
+                            <a href="https://github.com/ashwith1/Team_DataDoofs_Energy-Consumption-Dashboard" target="_blank" class="project-link">
                                 <i class="fab fa-github"></i>
                             </a>
                         </div>
                     </div>
                     <p class="project-description">
-                        Built dashboards to analyze EU energy consumption amid COVID-19 and Russia-Ukraine conflict, supporting informed energy policy decisions.
+                        Built dashboards to analyze EU energy consumption amid COVID-19 and Russia-Ukraine conflict, 
+                        supporting informed energy policy decisions.
                     </p>
                     <div class="project-tech">
                         <span class="tech-tag">Tableau</span>
                         <span class="tech-tag">Tableau Prep</span>
                     </div>
                     <div class="project-meta">
-                        <span>June 2024 - July 2024</span>
-                        <span>Heidelberg, Germany</span>
+                        <span class="project-location">Heidelberg, Germany</span>
+                        <span class="project-period">June 2024 - July 2024</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
+
     <!-- Experience Section -->
     <section id="experience" class="experience">
         <div class="container">
@@ -377,8 +314,8 @@
                         <h3>Intern - Data Science & AI</h3>
                         <h4>Merck KGaA</h4>
                         <div class="timeline-meta">
-                            <span><i class="fas fa-calendar"></i> April 2025 – August 2025</span>
-                            <span><i class="fas fa-map-marker-alt"></i> Darmstadt, Germany</span>
+                            <span class="timeline-location">Darmstadt, Germany</span>
+                            <span class="timeline-period">April 2025 – August 2025</span>
                         </div>
                         <ul class="timeline-responsibilities">
                             <li>Develop FastAPI endpoints integrating MyGPT (LLM) with Qdrant and SQL for efficient semantic searches</li>
@@ -396,8 +333,8 @@
                         <h3>Major Incident Manager / IT Support Specialist</h3>
                         <h4>McAfee Software (India) Private Limited</h4>
                         <div class="timeline-meta">
-                            <span><i class="fas fa-calendar"></i> August 2022 – October 2023</span>
-                            <span><i class="fas fa-map-marker-alt"></i> Bangalore, India</span>
+                            <span class="timeline-location">Bangalore, India</span>
+                            <span class="timeline-period">August 2022 – October 2023</span>
                         </div>
                         <ul class="timeline-responsibilities">
                             <li>Executed comprehensive incident resolution procedures improving response efficiency</li>
@@ -406,40 +343,10 @@
                         </ul>
                     </div>
                 </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h3>M.Sc. Applied Data Science and Analytics</h3>
-                        <h4>SRH Hochschule Heidelberg</h4>
-                        <div class="timeline-meta">
-                            <span><i class="fas fa-calendar"></i> October 2023 – Ongoing</span>
-                            <span><i class="fas fa-map-marker-alt"></i> Heidelberg, Germany</span>
-                        </div>
-                        <ul class="timeline-responsibilities">
-                            <li>Subjects: Data Analytics, Data Mining, Big Data, SQL, Tableau, NoSQL, Python, R</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h3>Bachelor of Information Science and Engineering</h3>
-                        <h4>PES Institute of Technology</h4>
-                        <div class="timeline-meta">
-                            <span><i class="fas fa-calendar"></i> June 2017 – July 2022</span>
-                            <span><i class="fas fa-map-marker-alt"></i> Bangalore, India</span>
-                        </div>
-                        <ul class="timeline-responsibilities">
-                            <li>Subjects: SQL, Python, Java, C, Data Warehouse, Machine Learning, Web Programming</li>
-                        </ul>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
-    
+
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
@@ -447,77 +354,62 @@
             <div class="contact-content">
                 <div class="contact-info">
                     <h3>Let's Connect</h3>
-                    <p>
-                        I'm always interested in discussing new opportunities, innovative projects, or potential collaborations in data science and AI.
-                    </p>
+                    <p>I'm always interested in discussing new opportunities, innovative projects, or potential collaborations in data science and AI.</p>
                     
                     <div class="contact-details">
                         <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <a href="mailto:asha491322@gmail.com">asha491322@gmail.com</a>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Heidelberg, Baden-Württemberg, Germany</span>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-phone"></i>
                             <a href="tel:+4915566158086">+49 15566158086</a>
                         </div>
                         <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Heidelberg, Baden-Württemberg, Germany</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fab fa-linkedin"></i>
-                            <a href="http://www.linkedin.com/in/ashwith-anand-poojary-b02b85342/" target="_blank">LinkedIn Profile</a>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fab fa-github"></i>
-                            <a href="https://github.com/ashwith1" target="_blank">GitHub Profile</a>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:asha491322@gmail.com">asha491322@gmail.com</a>
                         </div>
                     </div>
                 </div>
                 
                 <form class="contact-form" id="contact-form">
                     <div class="form-group">
-                        <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                        <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+                        <input type="email" id="email" name="email" class="form-control" placeholder="Your Email" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="subject" class="form-control" placeholder="Subject" required>
+                        <textarea id="message" name="message" class="form-control" rows="5" placeholder="Your Message" required></textarea>
                     </div>
-                    <div class="form-group">
-                        <textarea name="message" class="form-control" rows="6" placeholder="Your Message" required></textarea>
-                    </div>
-                    <button type="submit" class="btn-primary">
-                        <i class="fas fa-paper-plane"></i>
-                        Send Message
+                    <button type="submit" class="btn btn--primary btn--full-width">
+                        <i class="fas fa-paper-plane"></i> Send Message
                     </button>
                 </form>
             </div>
         </div>
     </section>
-    
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <p>&copy; 2025 Ashwith Anand Poojary. All rights reserved.</p>
                 <div class="footer-social">
-                    <a href="mailto:asha491322@gmail.com" title="Email">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                    <a href="https://github.com/ashwith1" target="_blank" title="GitHub">
+                    <a href="https://github.com/ashwith1" target="_blank" class="social-link">
                         <i class="fab fa-github"></i>
                     </a>
-                    <a href="http://www.linkedin.com/in/ashwith-anand-poojary-b02b85342/" target="_blank" title="LinkedIn">
+                    <a href="http://www.linkedin.com/in/ashwith-anand-poojary-b02b85342/" target="_blank" class="social-link">
                         <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:asha491322@gmail.com" class="social-link">
+                        <i class="fas fa-envelope"></i>
                     </a>
                 </div>
             </div>
         </div>
     </footer>
-    
-    <!-- Scripts -->
+
     <script src="app.js"></script>
 </body>
 </html>
