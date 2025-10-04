@@ -3,27 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ashwith Anand Poojary - Data Scientist & AI Researcher portfolio. Innovative data analyst with expertise in Machine Learning, NLP, and AI solutions.">
-    <meta name="keywords" content="Data Scientist, AI Researcher, Machine Learning, NLP, Python, Portfolio">
+    <title>Ashwith Anand Poojary - Data Scientist & AI Researcher</title>
+    <meta name="description" content="Data Scientist & AI Researcher specializing in machine learning, NLP, and data visualization. Currently pursuing M.Sc. in Applied Data Science at SRH Hochschule Heidelberg.">
+    <meta name="keywords" content="Data Science, Machine Learning, AI, NLP, Python, Tableau, SQL, FastAPI, LLM, Qdrant">
     <meta name="author" content="Ashwith Anand Poojary">
     
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Ashwith Anand Poojary - Data Scientist & AI Researcher">
-    <meta property="og:description" content="Innovative data analyst with expertise in Machine Learning, NLP, and AI solutions.">
+    <meta property="og:description" content="Innovative data analyst with expertise in AI, machine learning, and data visualization.">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://avatars.githubusercontent.com/u/151952490?v=4">
+    <meta property="og:url" content="https://ashwith1.github.io/AshResume.github.io/">
     
-    <title>Ashwith Anand Poojary - Data Scientist & AI Researcher</title>
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ashwith Anand Poojary - Data Scientist & AI Researcher">
+    <meta name="twitter:description" content="Innovative data analyst with expertise in AI, machine learning, and data visualization.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loader">
+            <div class="loader-inner"></div>
+        </div>
+    </div>
+
     <!-- Navigation -->
-    <nav class="navbar" id="navbar">
+    <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
                 <a href="#home">Ashwith</a>
@@ -31,9 +50,9 @@
             <div class="nav-menu" id="nav-menu">
                 <a href="#home" class="nav-link">Home</a>
                 <a href="#about" class="nav-link">About</a>
-                <a href="#skills" class="nav-link">Skills</a>
-                <a href="#projects" class="nav-link">Projects</a>
                 <a href="#experience" class="nav-link">Experience</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#skills" class="nav-link">Skills</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </div>
             <div class="nav-toggle" id="nav-toggle">
@@ -46,257 +65,89 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="particles" id="particles"></div>
+        <div id="particles"></div>
         <div class="hero-content">
             <div class="hero-text">
-                <h1>Hi, I'm <span class="highlight">Ashwith Anand Poojary</span></h1>
-                <div class="typing-container">
-                    <span class="typing-text" id="typing-text"></span>
+                <h1 class="hero-title">
+                    Hi, I'm <span class="highlight">Ashwith Anand Poojary</span>
+                </h1>
+                <h2 class="hero-subtitle">
+                    <span id="typing-text">Data Scientist & AI Researcher</span>
                     <span class="cursor">|</span>
-                </div>
+                </h2>
                 <p class="hero-description">
-                    Innovative data analyst with a strong foundation in applied data science and AI, demonstrated through impactful work at Merck KGaA, Darmstadt, Germany. Proficient in leveraging platforms like Palantir Foundry, LLMs and FastAPI to develop robust real-time solutions.
+                    Innovative data analyst with a strong foundation in applied data science and AI, 
+                    demonstrated through impactful work at Merck KGaA, Darmstadt, Germany. 
+                    Proficient in leveraging platforms like Palantir Foundry, LLMs and FastAPI 
+                    to develop robust real-time solutions.
                 </p>
                 <div class="hero-buttons">
-                    <button class="btn btn--primary" onclick="downloadResume()">
-                        <i class="fas fa-download"></i> Download CV
-                    </button>
-                    <div class="social-links">
-                        <a href="https://github.com/ashwith1" target="_blank" class="social-link">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="http://www.linkedin.com/in/ashwith-anand-poojary-b02b85342/" target="_blank" class="social-link">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="mailto:asha491322@gmail.com" class="social-link">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                    </div>
+                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                    <a href="#projects" class="btn btn-secondary">View My Work</a>
+                </div>
+                <div class="hero-social">
+                    <a href="https://github.com/ashwith1" target="_blank" class="social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/ashwith-anand-poojary-b02b85342" target="_blank" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:asha491322@gmail.com" class="social-link">
+                        <i class="fas fa-envelope"></i>
+                    </a>
                 </div>
             </div>
-            <div class="hero-image">
-                <div class="image-container">
-                    <img src="https://avatars.githubusercontent.com/u/151952490?v=4" alt="Ashwith Anand Poojary" class="profile-image">
-                </div>
-            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
         </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">Get to know me better</p>
+            </div>
             <div class="about-content">
                 <div class="about-text">
                     <p>
                         I'm currently pursuing my M.Sc. in Applied Data Science and Analytics at SRH Hochschule Heidelberg, Germany. 
-                        My journey in data science began with a Bachelor's in Information Science and Engineering from PES Institute of Technology, Bangalore.
+                        My journey in data science began with a Bachelor's in Information Science and Engineering 
+                        from PES Institute of Technology, Bangalore.
                     </p>
                     <p>
                         My passion lies in transforming complex data into actionable insights through innovative AI solutions. 
                         I've had the privilege of working as an intern at Merck KGaA, where I developed cutting-edge LLM integrations 
-                        and streamlined data processing workflows. My expertise spans across machine learning, natural language processing, 
-                        and modern data visualization platforms.
+                        and streamlined data processing workflows. My expertise spans across machine learning, 
+                        natural language processing, and modern data visualization platforms.
                     </p>
                     <p>
                         When I'm not coding or analyzing data, I enjoy exploring the intersection of technology and human behavior, 
                         continuously learning new methodologies to solve real-world problems through data-driven approaches.
                     </p>
-                </div>
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <h3>13+</h3>
-                        <p>GitHub Projects</p>
-                    </div>
-                    <div class="stat-card">
-                        <h3>40%</h3>
-                        <p>Query Efficiency Improvement</p>
-                    </div>
-                    <div class="stat-card">
-                        <h3>30%</h3>
-                        <p>Data Retrieval Speed Increase</p>
+                    <div class="about-buttons">
+                        <button class="btn btn-primary download-resume">
+                            <i class="fas fa-download"></i> Download Resume
+                        </button>
+                        <button class="btn btn-secondary add-to-wallet">
+                            <i class="fas fa-wallet"></i> Add to Wallet
+                        </button>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2 class="section-title">Skills & Technologies</h2>
-            <div class="skills-content">
-                <div class="skills-category">
-                    <h3>Advanced</h3>
-                    <div class="skills-grid">
-                        <div class="skill-card advanced">
-                            <i class="fab fa-python"></i>
-                            <span>Python</span>
-                        </div>
-                        <div class="skill-card advanced">
-                            <i class="fas fa-brain"></i>
-                            <span>Machine Learning</span>
-                        </div>
-                        <div class="skill-card advanced">
-                            <i class="fas fa-language"></i>
-                            <span>NLP</span>
-                        </div>
-                        <div class="skill-card advanced">
-                            <i class="fas fa-chart-bar"></i>
-                            <span>Power BI</span>
-                        </div>
-                        <div class="skill-card advanced">
-                            <i class="fas fa-chart-line"></i>
-                            <span>Tableau</span>
-                        </div>
-                        <div class="skill-card advanced">
-                            <i class="fas fa-code"></i>
-                            <span>FastAPI</span>
-                        </div>
-                        <div class="skill-card advanced">
-                            <i class="fas fa-robot"></i>
-                            <span>LLM Integration</span>
-                        </div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="15">0</div>
+                        <div class="stat-label">Projects Completed</div>
                     </div>
-                </div>
-                <div class="skills-category">
-                    <h3>Proficient</h3>
-                    <div class="skills-grid">
-                        <div class="skill-card proficient">
-                            <i class="fab fa-microsoft"></i>
-                            <span>Azure</span>
-                        </div>
-                        <div class="skill-card proficient">
-                            <i class="fab fa-google"></i>
-                            <span>GCP</span>
-                        </div>
-                        <div class="skill-card proficient">
-                            <i class="fas fa-stream"></i>
-                            <span>Kafka</span>
-                        </div>
-                        <div class="skill-card proficient">
-                            <i class="fas fa-database"></i>
-                            <span>Qdrant</span>
-                        </div>
-                        <div class="skill-card proficient">
-                            <i class="fas fa-chart-pie"></i>
-                            <span>SAS</span>
-                        </div>
-                        <div class="skill-card proficient">
-                            <i class="fas fa-project-diagram"></i>
-                            <span>Palantir Foundry</span>
-                        </div>
-                        <div class="skill-card proficient">
-                            <i class="fas fa-sync-alt"></i>
-                            <span>Agile</span>
-                        </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="2">0</div>
+                        <div class="stat-label">Years Experience</div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Master Thesis: AI-Vector Database Integration</h3>
-                        <div class="project-links">
-                            <a href="https://masterthesisdashboard.vercel.app" target="_blank" class="project-link">
-                                <i class="fas fa-external-link-alt"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <p class="project-description">
-                        Integrate MyGPT (LLM) with Qdrant and SQL via FastAPI to enable efficient semantic searches, 
-                        real-time insights, and interactive data visualizations.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">MyGPT</span>
-                        <span class="tech-tag">FastAPI</span>
-                        <span class="tech-tag">Qdrant</span>
-                        <span class="tech-tag">Azure DevOps</span>
-                    </div>
-                    <div class="project-meta">
-                        <span class="project-location">Darmstadt, Germany</span>
-                        <span class="project-period">April 2025 – Present</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>German Biography Generator</h3>
-                        <div class="project-links">
-                            <a href="https://github.com/ashwith1/German_Biography_Generator" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <p class="project-description">
-                        Automated AI-driven biography generator from interviews at Institut für Geschichte und Biographie, 
-                        GDPR-compliant large-scale text processing.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Meta Llama 3.1</span>
-                        <span class="tech-tag">Mistral</span>
-                        <span class="tech-tag">Streamlit</span>
-                    </div>
-                    <div class="project-meta">
-                        <span class="project-location">Heidelberg, Germany</span>
-                        <span class="project-period">May 2024 - October 2024</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>2024 US Presidential Election Dashboard</h3>
-                        <div class="project-links">
-                            <a href="https://github.com/ashwith1/The-2024-US-Presidential-Election-Dashboard" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <p class="project-description">
-                        Dynamic Tableau dashboard showcasing electoral themes, voter priorities, demographic insights, 
-                        and results from 2024 US Presidential Election.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Tableau</span>
-                        <span class="tech-tag">Tableau Prep</span>
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">TabPy</span>
-                    </div>
-                    <div class="project-meta">
-                        <span class="project-location">Heidelberg, Germany</span>
-                        <span class="project-period">October 2024 - November 2024</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>DataDoofs Energy Consumption Dashboard</h3>
-                        <div class="project-links">
-                            <a href="https://github.com/ashwith1/Team_DataDoofs_Energy-Consumption-Dashboard" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <p class="project-description">
-                        Built dashboards to analyze EU energy consumption amid COVID-19 and Russia-Ukraine conflict, 
-                        supporting informed energy policy decisions.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Tableau</span>
-                        <span class="tech-tag">Tableau Prep</span>
-                    </div>
-                    <div class="project-meta">
-                        <span class="project-location">Heidelberg, Germany</span>
-                        <span class="project-period">June 2024 - July 2024</span>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="5">0</div>
+                        <div class="stat-label">Technologies Mastered</div>
                     </div>
                 </div>
             </div>
@@ -306,41 +157,257 @@
     <!-- Experience Section -->
     <section id="experience" class="experience">
         <div class="container">
-            <h2 class="section-title">Professional Experience</h2>
+            <div class="section-header">
+                <h2 class="section-title">Experience</h2>
+                <p class="section-subtitle">My professional journey</p>
+            </div>
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-marker"></div>
                     <div class="timeline-content">
-                        <h3>Intern - Data Science & AI</h3>
-                        <h4>Merck KGaA</h4>
-                        <div class="timeline-meta">
-                            <span class="timeline-location">Darmstadt, Germany</span>
-                            <span class="timeline-period">April 2025 – August 2025</span>
+                        <div class="timeline-header">
+                            <h3>Data Science Intern</h3>
+                            <span class="company">Merck KGaA, Darmstadt, Germany</span>
+                            <span class="duration">2024 - Present</span>
                         </div>
-                        <ul class="timeline-responsibilities">
-                            <li>Develop FastAPI endpoints integrating MyGPT (LLM) with Qdrant and SQL for efficient semantic searches</li>
-                            <li>Implement metadata-driven SQL queries through Azure DevOps pipelines, reducing manual effort by 40%</li>
-                            <li>Streamline end-to-end data processing, accelerating retrieval time by 30%</li>
-                            <li>Present actionable data insights to stakeholders, enhancing decision-making efficiency</li>
-                            <li>Implemented Palantir AIP multi-agent chatbot with dynamic dashboard filtering</li>
+                        <p>Developed cutting-edge LLM integrations and streamlined data processing workflows using Palantir Foundry platform.</p>
+                        <ul class="timeline-skills">
+                            <li>Palantir Foundry</li>
+                            <li>LLM Integration</li>
+                            <li>Data Processing</li>
+                            <li>Workflow Optimization</li>
                         </ul>
                     </div>
                 </div>
-                
                 <div class="timeline-item">
                     <div class="timeline-marker"></div>
                     <div class="timeline-content">
-                        <h3>Major Incident Manager / IT Support Specialist</h3>
-                        <h4>McAfee Software (India) Private Limited</h4>
-                        <div class="timeline-meta">
-                            <span class="timeline-location">Bangalore, India</span>
-                            <span class="timeline-period">August 2022 – October 2023</span>
+                        <div class="timeline-header">
+                            <h3>M.Sc. Applied Data Science and Analytics</h3>
+                            <span class="company">SRH Hochschule Heidelberg, Germany</span>
+                            <span class="duration">2023 - 2025</span>
                         </div>
-                        <ul class="timeline-responsibilities">
-                            <li>Executed comprehensive incident resolution procedures improving response efficiency</li>
-                            <li>Utilized O-365 applications for seamless global team collaboration</li>
-                            <li>Developed robust Incident Management processes reducing escalations</li>
+                        <p>Pursuing advanced studies in data science with focus on machine learning, AI, and analytics applications.</p>
+                        <ul class="timeline-skills">
+                            <li>Machine Learning</li>
+                            <li>Statistical Analysis</li>
+                            <li>Data Visualization</li>
+                            <li>Research Methods</li>
                         </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>B.E. Information Science and Engineering</h3>
+                            <span class="company">PES Institute of Technology, Bangalore</span>
+                            <span class="duration">2019 - 2023</span>
+                        </div>
+                        <p>Built strong foundation in computer science, software engineering, and data structures.</p>
+                        <ul class="timeline-skills">
+                            <li>Programming Fundamentals</li>
+                            <li>Data Structures</li>
+                            <li>Software Engineering</li>
+                            <li>Database Systems</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">Some of my recent work</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-stats">
+                                <div class="stat">
+                                    <span class="stat-value">40%</span>
+                                    <span class="stat-label">Query Efficiency Improvement</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-value">60%</span>
+                                    <span class="stat-label">Data Retrieval Speed Increase</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Interactive Conversational AI Dashboard</h3>
+                        <p class="project-description">
+                            Integrate MyGPT (LLM) with Qdrant and SQL via FastAPI to enable efficient semantic searches, 
+                            real-time insights, and interactive data visualizations.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">Qdrant</span>
+                            <span class="tech-tag">LLM</span>
+                            <span class="tech-tag">Streamlit</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://masterthesisdashboard.vercel.app" class="project-link" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/ashwith1/conversational-ai-dashboard" class="project-link" target="_blank">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <h4>AI-Powered Biography Generator</h4>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Automated Biography Generator</h3>
+                        <p class="project-description">
+                            Automated AI-driven biography generator from interviews at Institut für Geschichte und Biographie, 
+                            GDPR-compliant large-scale text processing.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">NLP</span>
+                            <span class="tech-tag">AI</span>
+                            <span class="tech-tag">GDPR</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Case Study
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <h4>2024 US Election Analytics</h4>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Electoral Analytics Dashboard</h3>
+                        <p class="project-description">
+                            Dynamic Tableau dashboard showcasing electoral themes, voter priorities, demographic insights, 
+                            and results from 2024 US Presidential Election.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Tableau</span>
+                            <span class="tech-tag">Data Visualization</span>
+                            <span class="tech-tag">Analytics</span>
+                            <span class="tech-tag">Political Data</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> View Dashboard
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Skills & Technologies</h2>
+                <p class="section-subtitle">My technical expertise</p>
+            </div>
+            <div class="skills-content">
+                <div class="skills-category">
+                    <h3>Programming & Development</h3>
+                    <div class="skill-item">
+                        <span class="skill-name">Python</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-percentage="95"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">SQL</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-percentage="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">FastAPI</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-percentage="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">JavaScript</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-percentage="80"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skills-category">
+                    <h3>Data Science & AI</h3>
+                    <div class="skill-item">
+                        <span class="skill-name">Machine Learning</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-percentage="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">NLP</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-percentage="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Deep Learning</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-percentage="80"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">LLMs</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-percentage="85"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skills-category">
+                    <h3>Platforms & Tools</h3>
+                    <div class="skill-item">
+                        <span class="skill-name">Tableau</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-percentage="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Power BI</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-percentage="80"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Palantir Foundry</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-percentage="75"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Azure DevOps</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-percentage="70"></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -350,39 +417,54 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">I'm always interested in discussing new opportunities</p>
+            </div>
             <div class="contact-content">
                 <div class="contact-info">
-                    <h3>Let's Connect</h3>
-                    <p>I'm always interested in discussing new opportunities, innovative projects, or potential collaborations in data science and AI.</p>
-                    
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Heidelberg, Baden-Württemberg, Germany</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <a href="tel:+4915566158086">+49 15566158086</a>
-                        </div>
-                        <div class="contact-item">
+                    <div class="contact-item">
+                        <div class="contact-icon">
                             <i class="fas fa-envelope"></i>
-                            <a href="mailto:asha491322@gmail.com">asha491322@gmail.com</a>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>asha491322@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <p>+49 15566158086</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Location</h4>
+                            <p>Heidelberg, Germany</p>
                         </div>
                     </div>
                 </div>
-                
-                <form class="contact-form" id="contact-form">
+                <form id="contact-form" class="contact-form">
                     <div class="form-group">
-                        <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required>
+                        <input type="text" name="name" placeholder="Your Name" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" id="email" name="email" class="form-control" placeholder="Your Email" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
                     </div>
                     <div class="form-group">
-                        <textarea id="message" name="message" class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                        <input type="text" name="subject" placeholder="Subject" required>
                     </div>
-                    <button type="submit" class="btn btn--primary btn--full-width">
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
                         <i class="fas fa-paper-plane"></i> Send Message
                     </button>
                 </form>
@@ -394,12 +476,14 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2025 Ashwith Anand Poojary. All rights reserved.</p>
+                <div class="footer-text">
+                    <p>&copy; 2024 Ashwith Anand Poojary. All rights reserved.</p>
+                </div>
                 <div class="footer-social">
                     <a href="https://github.com/ashwith1" target="_blank" class="social-link">
                         <i class="fab fa-github"></i>
                     </a>
-                    <a href="http://www.linkedin.com/in/ashwith-anand-poojary-b02b85342/" target="_blank" class="social-link">
+                    <a href="https://linkedin.com/in/ashwith-anand-poojary-b02b85342" target="_blank" class="social-link">
                         <i class="fab fa-linkedin"></i>
                     </a>
                     <a href="mailto:asha491322@gmail.com" class="social-link">
@@ -410,6 +494,7 @@
         </div>
     </footer>
 
+    <!-- JavaScript -->
     <script src="app.js"></script>
 </body>
 </html>
