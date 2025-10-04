@@ -41,105 +41,102 @@ function initNavigation() {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             const targetId = this.getAttribute('href').substring(1);
-            const targetElement = document.getElementById(targetId);
-            
-            if (targetElement) {
-                const offsetTop = targetElement.offsetTop - 80;
-                smoothScroll(offsetTop);
-                
-                // Update active nav link
-                navLinks.forEach(nl => nl.classList.remove('active'));
-                this.classList.add('active');
-                
-                // Close mobile menu if open
-                const navMenu = document.getElementById('nav-menu');
-                const navToggle = document.getElementById('nav-toggle');
-                navMenu.classList.remove('active');
-                navToggle.classList.remove('active');
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                const targetPosition = targetSection.offsetTop - navbarHeight;
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
             }
+            
+            // Close mobile menu if open
+            const navMenu = document.getElementById('nav-menu');
+            const navToggle = document.getElementById('nav-toggle');
+            navMenu.classList.remove('active');
+            navToggle.classList.remove('active');
         });
     });
 }
 
-// Smooth scroll function
-function smoothScroll(targetPosition) {
-    const startPosition = window.pageYOffset;
-    const distance = targetPosition - startPosition;
-    const duration = 1000;
-    let start = null;
+// Mobile menu functionality
+function initMobileMenu() {
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
     
-    function animation(currentTime) {
-        if (start === null) start = currentTime;
-        const timeElapsed = currentTime - start;
-        const run = ease(timeElapsed, startPosition, distance, duration);
-        window.scrollTo(0, run);
-        if (timeElapsed < duration) requestAnimationFrame(animation);
-    }
+    navToggle.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+        navToggle.classList.toggle('active');
+    });
     
-    function ease(t, b, c, d) {
-        t /= d / 2;
-        if (t < 1) return c / 2 * t * t + b;
-        t--;
-        return -c / 2 * (t * (t - 2) - 1) + b;
-    }
-    
-    requestAnimationFrame(animation);
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
+            navMenu.classList.remove('active');
+            navToggle.classList.remove('active');
+        }
+    });
 }
 
-// Typing effect
+// Navbar scroll effect
+function initScrollNavbar() {
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+}
+
+// Typing effect for hero section
 function initTypingEffect() {
     const typingText = document.getElementById('typing-text');
-    if (!typingText) return;
-    
-    const texts = [
-        'Data Scientist',
-        'AI Researcher', 
+    const phrases = [
+        'Data Scientist & AI Researcher',
         'Machine Learning Engineer',
         'NLP Specialist',
-        'Data Analyst',
-        'Python Developer'
+        'Data Visualization Expert',
+        'AI Solutions Developer'
     ];
     
-    let textIndex = 0;
-    let charIndex = 0;
+    let currentPhrase = 0;
+    let currentChar = 0;
     let isDeleting = false;
-    const typingSpeed = 100;
-    const deletingSpeed = 50;
-    const pauseTime = 2000;
     
-    function typeWriter() {
-        const currentText = texts[textIndex];
+    function typeEffect() {
+        const current = phrases[currentPhrase];
         
         if (isDeleting) {
-            typingText.textContent = currentText.substring(0, charIndex - 1);
-            charIndex--;
+            typingText.textContent = current.substring(0, currentChar - 1);
+            currentChar--;
         } else {
-            typingText.textContent = currentText.substring(0, charIndex + 1);
-            charIndex++;
+            typingText.textContent = current.substring(0, currentChar + 1);
+            currentChar++;
         }
         
-        let typeSpeed = isDeleting ? deletingSpeed : typingSpeed;
+        let typeSpeed = isDeleting ? 100 : 150;
         
-        if (!isDeleting && charIndex === currentText.length) {
-            typeSpeed = pauseTime;
+        if (!isDeleting && currentChar === current.length) {
+            typeSpeed = 2000; // Pause at end
             isDeleting = true;
-        } else if (isDeleting && charIndex === 0) {
+        } else if (isDeleting && currentChar === 0) {
             isDeleting = false;
-            textIndex = (textIndex + 1) % texts.length;
-            typeSpeed = 500;
+            currentPhrase = (currentPhrase + 1) % phrases.length;
+            typeSpeed = 500; // Pause before next phrase
         }
         
-        setTimeout(typeWriter, typeSpeed);
+        setTimeout(typeEffect, typeSpeed);
     }
     
-    typeWriter();
+    typeEffect();
 }
 
-// Particle system
+// Particle animation system
 function initParticles() {
     const particlesContainer = document.getElementById('particles');
-    if (!particlesContainer) return;
-    
     const particleCount = 50;
     
     // Create particles
@@ -148,25 +145,26 @@ function initParticles() {
     }
     
     function createParticle() {
-        const particle = {
-            element: document.createElement('div'),
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        
+        const size = Math.random() * 4 + 2;
+        particle.style.width = size + 'px';
+        particle.style.height = size + 'px';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.top = Math.random() * 100 + '%';
+        particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
+        particle.style.animationDelay = Math.random() * 2 + 's';
+        
+        particlesContainer.appendChild(particle);
+        
+        particles.push({
+            element: particle,
             x: Math.random() * window.innerWidth,
             y: Math.random() * window.innerHeight,
             vx: (Math.random() - 0.5) * 0.5,
-            vy: (Math.random() - 0.5) * 0.5,
-            size: Math.random() * 3 + 1
-        };
-        
-        particle.element.style.position = 'absolute';
-        particle.element.style.width = particle.size + 'px';
-        particle.element.style.height = particle.size + 'px';
-        particle.element.style.background = 'rgba(33, 128, 141, 0.6)';
-        particle.element.style.borderRadius = '50%';
-        particle.element.style.pointerEvents = 'none';
-        particle.element.style.opacity = Math.random() * 0.5 + 0.2;
-        
-        particlesContainer.appendChild(particle.element);
-        particles.push(particle);
+            vy: (Math.random() - 0.5) * 0.5
+        });
     }
     
     // Animate particles
@@ -175,28 +173,21 @@ function initParticles() {
             particle.x += particle.vx;
             particle.y += particle.vy;
             
-            // Wrap around screen
-            if (particle.x < 0) particle.x = window.innerWidth;
-            if (particle.x > window.innerWidth) particle.x = 0;
-            if (particle.y < 0) particle.y = window.innerHeight;
-            if (particle.y > window.innerHeight) particle.y = 0;
+            // Bounce off edges
+            if (particle.x < 0 || particle.x > window.innerWidth) particle.vx *= -1;
+            if (particle.y < 0 || particle.y > window.innerHeight) particle.vy *= -1;
             
-            particle.element.style.left = particle.x + 'px';
-            particle.element.style.top = particle.y + 'px';
+            // Keep particles within bounds
+            particle.x = Math.max(0, Math.min(window.innerWidth, particle.x));
+            particle.y = Math.max(0, Math.min(window.innerHeight, particle.y));
+            
+            particle.element.style.transform = `translate(${particle.x}px, ${particle.y}px)`;
         });
         
         animationId = requestAnimationFrame(animateParticles);
     }
     
     animateParticles();
-    
-    // Handle resize
-    window.addEventListener('resize', () => {
-        particles.forEach(particle => {
-            if (particle.x > window.innerWidth) particle.x = window.innerWidth;
-            if (particle.y > window.innerHeight) particle.y = window.innerHeight;
-        });
-    });
 }
 
 // Scroll animations
@@ -206,60 +197,74 @@ function initScrollAnimations() {
         rootMargin: '0px 0px -50px 0px'
     };
     
-    const observer = new IntersectionObserver((entries) => {
+    const observer = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in-up');
+                entry.target.classList.add('animate-in');
+                
+                // Animate skill bars
+                if (entry.target.classList.contains('skill-item')) {
+                    const progressBar = entry.target.querySelector('.skill-progress');
+                    const percentage = progressBar.dataset.percentage;
+                    progressBar.style.width = percentage + '%';
+                }
+                
+                // Animate counters
+                if (entry.target.classList.contains('stat-number')) {
+                    animateCounter(entry.target);
+                }
             }
         });
     }, observerOptions);
     
     // Observe elements
-    const animatedElements = document.querySelectorAll('.stat-card, .skill-card, .project-card, .timeline-item');
-    animatedElements.forEach(el => {
-        observer.observe(el);
-    });
+    const elementsToAnimate = document.querySelectorAll('.project-card, .skill-item, .timeline-item, .stat-number, .about-text, .section-title');
+    elementsToAnimate.forEach(el => observer.observe(el));
+}
+
+// Counter animation
+function animateCounter(element) {
+    const target = parseInt(element.dataset.count);
+    let current = 0;
+    const increment = target / 50;
+    const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+            current = target;
+            clearInterval(timer);
+        }
+        element.textContent = Math.floor(current);
+    }, 40);
 }
 
 // Contact form functionality
 function initContactForm() {
     const contactForm = document.getElementById('contact-form');
-    if (!contactForm) return;
-    
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Get form data
-        const formData = new FormData(this);
-        const name = formData.get('name');
-        const email = formData.get('email');
-        const message = formData.get('message');
-        
-        // Basic validation
-        if (!name || !email || !message) {
-            showToast('Please fill in all fields', 'error');
-            return;
-        }
-        
-        if (!isValidEmail(email)) {
-            showToast('Please enter a valid email address', 'error');
-            return;
-        }
-        
-        // Create mailto link with form data
-        const subject = encodeURIComponent('Contact from Portfolio Website');
-        const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
-        const mailtoLink = `mailto:asha491322@gmail.com?subject=${subject}&body=${body}`;
-        
-        // Open default email client
-        window.location.href = mailtoLink;
-        
-        // Show success message
-        showToast('Email client opened successfully!', 'success');
-        
-        // Reset form
-        this.reset();
-    });
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const message = formData.get('message');
+            
+            // Simple validation
+            if (!name || !email || !message) {
+                showMessage('Please fill in all fields.', 'error');
+                return;
+            }
+            
+            if (!isValidEmail(email)) {
+                showMessage('Please enter a valid email address.', 'error');
+                return;
+            }
+            
+            // Simulate form submission
+            showMessage('Thank you for your message! I\'ll get back to you soon.', 'success');
+            this.reset();
+        });
+    }
 }
 
 // Email validation
@@ -268,347 +273,104 @@ function isValidEmail(email) {
     return emailRegex.test(email);
 }
 
-// Mobile menu functionality
-function initMobileMenu() {
-    const navToggle = document.getElementById('nav-toggle');
-    const navMenu = document.getElementById('nav-menu');
+// Show message function
+function showMessage(text, type) {
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `message ${type}`;
+    messageDiv.textContent = text;
     
-    if (!navToggle || !navMenu) return;
+    const form = document.getElementById('contact-form');
+    form.appendChild(messageDiv);
     
-    navToggle.addEventListener('click', function() {
-        navMenu.classList.toggle('active');
-        navToggle.classList.toggle('active');
-    });
-    
-    // Close menu when clicking on a link
-    const navLinks = document.querySelectorAll('.nav-link');
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-            navToggle.classList.remove('active');
-        });
-    });
+    setTimeout(() => {
+        messageDiv.remove();
+    }, 5000);
 }
 
-// Navbar scroll effect
-function initScrollNavbar() {
-    const navbar = document.getElementById('navbar');
-    if (!navbar) return;
-    
-    const scrollThreshold = 100;
-    
-    function updateNavbar() {
-        if (window.scrollY > scrollThreshold) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-        
-        // Update active nav link based on scroll position
-        updateActiveNavLink();
-    }
-    
-    function updateActiveNavLink() {
-        const sections = document.querySelectorAll('section[id]');
-        const navLinks = document.querySelectorAll('.nav-link');
-        
-        let currentSection = '';
-        
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop - 120;
-            const sectionBottom = sectionTop + section.offsetHeight;
-            
-            if (window.scrollY >= sectionTop && window.scrollY < sectionBottom) {
-                currentSection = section.getAttribute('id');
-            }
-        });
-        
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${currentSection}`) {
-                link.classList.add('active');
-            }
-        });
-    }
-    
-    // Debounced scroll handler
-    let ticking = false;
-    
-    function handleScroll() {
-        if (!ticking) {
-            requestAnimationFrame(() => {
-                updateNavbar();
-                ticking = false;
+// Smooth scroll for anchor links
+document.addEventListener('click', function(e) {
+    if (e.target.matches('a[href^="#"]')) {
+        e.preventDefault();
+        const targetId = e.target.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+            const navbarHeight = document.querySelector('.navbar').offsetHeight;
+            const targetPosition = targetElement.offsetTop - navbarHeight;
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
             });
-            ticking = true;
         }
     }
-    
-    window.addEventListener('scroll', handleScroll);
-    
-    // Initial call
-    updateNavbar();
+});
+
+// Handle window resize
+window.addEventListener('resize', function() {
+    // Update particle boundaries
+    particles.forEach(particle => {
+        if (particle.x > window.innerWidth) particle.x = window.innerWidth;
+        if (particle.y > window.innerHeight) particle.y = window.innerHeight;
+    });
+});
+
+// Theme toggle (if implemented)
+function initThemeToggle() {
+    const themeToggle = document.getElementById('theme-toggle');
+    if (themeToggle) {
+        themeToggle.addEventListener('click', function() {
+            document.body.classList.toggle('light-theme');
+            localStorage.setItem('theme', document.body.classList.contains('light-theme') ? 'light' : 'dark');
+        });
+        
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            document.body.classList.add('light-theme');
+        }
+    }
 }
 
 // Download resume functionality
 function downloadResume() {
-    // Show immediate feedback
-    showToast('Preparing your resume download...', 'success');
-    
-    // Create a comprehensive resume content
-    const resumeContent = `
-ASHWITH ANAND POOJARY
-Data Scientist & AI Researcher
-===========================================
-
-CONTACT INFORMATION:
-Email: asha491322@gmail.com
-Phone: +49 1.5566158086e+10
-Location: Heidelberg, Baden-Württemberg, Germany
-LinkedIn: http://www.linkedin.com/in/ashwith-anand-poojary-b02b85342/
-GitHub: https://github.com/ashwith1
-
-PROFESSIONAL SUMMARY:
-Innovative data analyst with a strong foundation in applied data science and AI, demonstrated through impactful work at Merck KGaA, Darmstadt, Germany. Proficient in leveraging platforms like Palantir Foundry, LLMs and FastAPI to develop robust real-time solutions.
-
-PROFESSIONAL EXPERIENCE:
-===========================================
-
-Intern - Data Science & AI
-Merck KGaA | Darmstadt, Germany | April 2025 – August 2025
-• Develop FastAPI endpoints integrating MyGPT (LLM) with Qdrant and SQL for efficient semantic searches
-• Implement metadata-driven SQL queries through Azure DevOps pipelines, reducing manual effort by 40%
-• Streamline end-to-end data processing, accelerating retrieval time by 30%
-• Present actionable data insights to stakeholders, enhancing decision-making efficiency
-• Implemented Palantir AIP multi-agent chatbot with dynamic dashboard filtering
-
-Major Incident Manager / IT Support Specialist
-McAfee Software (India) Private Limited | Bangalore, India | August 2022 – October 2023
-• Executed comprehensive incident resolution procedures improving response efficiency
-• Utilized O-365 applications for seamless global team collaboration
-• Developed robust Incident Management processes reducing escalations
-
-EDUCATION:
-===========================================
-
-M.Sc. Applied Data Science and Analytics
-SRH Hochschule Heidelberg | Heidelberg, Germany | October 2023 – Ongoing
-Subjects: Data Analytics, Data Mining, Big Data, SQL, Tableau, NoSQL, Python, R
-
-Bachelor of Information Science and Engineering
-PES Institute of Technology | Bangalore, India | June 2017 – July 2022
-Subjects: SQL, Python, Java, C, Data Warehouse, Machine Learning, Web Programming
-
-TECHNICAL SKILLS:
-===========================================
-
-Advanced:
-• Python
-• Machine Learning
-• NLP (Natural Language Processing)
-• Power BI
-• Tableau
-• FastAPI
-• LLM Integration
-
-Proficient:
-• Azure
-• GCP (Google Cloud Platform)
-• Kafka
-• Qdrant
-• SAS
-• Palantir Foundry
-• Agile
-
-FEATURED PROJECTS:
-===========================================
-
-1. Master Thesis: AI-Vector Database Integration
-   Darmstadt, Germany | April 2025 – Present
-   • Integrate MyGPT (LLM) with Qdrant and SQL via FastAPI to enable efficient semantic searches
-   • Real-time insights and interactive data visualizations
-   • Technologies: Python, MyGPT, FastAPI, Qdrant, Azure DevOps
-   • Live Demo: https://masterthesisdashboard.vercel.app
-
-2. German Biography Generator
-   Heidelberg, Germany | May 2024 - October 2024
-   • Automated AI-driven biography generator from interviews
-   • Institut für Geschichte und Biographie partnership
-   • GDPR-compliant large-scale text processing
-   • Technologies: Python, Meta Llama 3.1, Mistral, Streamlit
-   • GitHub: https://github.com/ashwith1/German_Biography_Generator
-
-3. 2024 US Presidential Election Dashboard
-   Heidelberg, Germany | October 2024 - November 2024
-   • Dynamic Tableau dashboard showcasing electoral themes
-   • Voter priorities and demographic insights analysis
-   • Technologies: Tableau, Tableau Prep, Python, TabPy
-   • GitHub: https://github.com/ashwith1/The-2024-US-Presidential-Election-Dashboard
-
-4. DataDoofs Energy Consumption Dashboard
-   Heidelberg, Germany | June 2024 - July 2024
-   • EU energy consumption analysis amid COVID-19 and Russia-Ukraine conflict
-   • Supporting informed energy policy decisions
-   • Technologies: Tableau, Tableau Prep
-   • GitHub: https://github.com/ashwith1/Team_DataDoofs_Energy-Consumption-Dashboard
-
-KEY ACHIEVEMENTS:
-===========================================
-• 13+ GitHub Projects
-• 40% improvement in query efficiency at Merck KGaA
-• 30% increase in data retrieval speed
-• GDPR-compliant large-scale text processing implementation
-• Multi-agent chatbot development with dynamic filtering
-
-LANGUAGES:
-===========================================
-• English (Fluent)
-• German (Intermediate)
-• Hindi (Native)
-• Kannada (Native)
-
-CERTIFICATIONS & INTERESTS:
-===========================================
-• Data Science & Machine Learning
-• Natural Language Processing
-• Vector Databases & Semantic Search
-• Business Intelligence & Visualization
-• Cloud Computing (Azure, GCP)
-• Agile Project Management
-
-===========================================
-Generated on: ${new Date().toLocaleDateString('en-US', { 
-    year: 'numeric', 
-    month: 'long', 
-    day: 'numeric' 
-})}
-
-This resume was generated from my interactive portfolio website.
-For the most up-to-date information, please visit: https://ashresume.github.io
-===========================================
-`;
-    
-    // Create blob and download
-    const blob = new Blob([resumeContent], { type: 'text/plain;charset=utf-8' });
-    const url = window.URL.createObjectURL(blob);
     const link = document.createElement('a');
-    link.href = url;
-    link.download = 'Ashwith_Anand_Poojary_Resume.txt';
-    document.body.appendChild(link);
+    link.href = '/assets/documents/resume.pdf';
+    link.download = 'Ashwith_Anand_Poojary_Resume.pdf';
     link.click();
-    document.body.removeChild(link);
-    window.URL.revokeObjectURL(url);
-    
-    // Show success message after a short delay
-    setTimeout(() => {
-        showToast('Resume downloaded successfully! 📄', 'success');
-    }, 500);
 }
 
-// Toast notification system
-function showToast(message, type = 'info', duration = 5000) {
-    // Remove existing toasts
-    const existingToasts = document.querySelectorAll('.toast');
-    existingToasts.forEach(toast => toast.remove());
-    
-    // Create toast element
-    const toast = document.createElement('div');
-    toast.className = `toast toast--${type}`;
-    
-    // Toast content
-    toast.innerHTML = `
-        <div class="toast__icon">
-            ${getToastIcon(type)}
-        </div>
-        <div class="toast__message">${message}</div>
-        <button class="toast__close" onclick="this.parentElement.remove()">
-            <i class="fas fa-times"></i>
-        </button>
-    `;
-    
-    // Add to page
-    document.body.appendChild(toast);
-    
-    // Auto remove
-    setTimeout(() => {
-        if (toast.parentElement) {
-            toast.style.opacity = '0';
-            toast.style.transform = 'translateX(100%)';
-            setTimeout(() => toast.remove(), 300);
-        }
-    }, duration);
-    
-    // Make toast clickable to dismiss
-    toast.addEventListener('click', (e) => {
-        if (e.target.closest('.toast__close')) {
-            toast.remove();
-        }
-    });
+// Add to wallet functionality
+function addToWallet() {
+    const link = document.createElement('a');
+    link.href = '/assets/wallet/business-card.pkpass';
+    link.download = 'Ashwith_Business_Card.pkpass';
+    link.click();
 }
 
-// Get appropriate icon for toast type
-function getToastIcon(type) {
-    switch (type) {
-        case 'success':
-            return '<i class="fas fa-check-circle"></i>';
-        case 'error':
-            return '<i class="fas fa-exclamation-circle"></i>';
-        case 'warning':
-            return '<i class="fas fa-exclamation-triangle"></i>';
-        default:
-            return '<i class="fas fa-info-circle"></i>';
+// Initialize additional features when DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
+    initThemeToggle();
+    
+    // Add event listeners for download buttons
+    const downloadBtn = document.querySelector('.download-resume');
+    if (downloadBtn) {
+        downloadBtn.addEventListener('click', downloadResume);
     }
-}
-
-// Keyboard navigation
-document.addEventListener('keydown', function(e) {
-    // ESC key to close mobile menu
-    if (e.key === 'Escape') {
-        const navMenu = document.getElementById('nav-menu');
-        const navToggle = document.getElementById('nav-toggle');
-        if (navMenu && navToggle) {
-            navMenu.classList.remove('active');
-            navToggle.classList.remove('active');
-        }
-        
-        // Close all toasts
-        const toasts = document.querySelectorAll('.toast');
-        toasts.forEach(toast => toast.remove());
+    
+    const walletBtn = document.querySelector('.add-to-wallet');
+    if (walletBtn) {
+        walletBtn.addEventListener('click', addToWallet);
     }
 });
 
-// Performance optimization: Debounce scroll events
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
-
-// Add performance monitoring
-const performanceObserver = new PerformanceObserver((list) => {
-    for (const entry of list.getEntries()) {
-        if (entry.entryType === 'largest-contentful-paint') {
-            console.log('LCP:', entry.startTime);
-        }
-    }
+// Error handling
+window.addEventListener('error', function(e) {
+    console.error('Application error:', e.error);
 });
 
-try {
-    performanceObserver.observe({ entryTypes: ['largest-contentful-paint'] });
-} catch (e) {
-    // Performance Observer not supported in all browsers
-    console.log('Performance Observer not supported');
-}
-
-// Export functions for potential future use
-window.portfolioApp = {
-    downloadResume,
-    showToast,
-    smoothScroll
-};
+// Performance monitoring
+window.addEventListener('load', function() {
+    setTimeout(() => {
+        const perfData = performance.getEntriesByType('navigation')[0];
+        console.log('Page load time:', perfData.loadEventEnd - perfData.loadEventStart, 'ms');
+    }, 0);
+});
